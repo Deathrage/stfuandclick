@@ -12,7 +12,10 @@
 
 		"jsx": "react",
 
-		"outDir": "./dist"
+		"outDir": "./dist",
+
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true
 	},
 	"include": [
 	  "src/**/*", "webpack.config.js", "assets"
