@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
+    "start": "node index.js",
+    "build": "webpack",
     "start:dev": "concurrently \"npm run build:dev\" \"node index.js\"",
-    "build:dev": "webpack --watch",
-    "build:prod": "webpack"
+    "build:dev": "webpack --watch"
   },
   "author": "",
   "license": "ISC",
