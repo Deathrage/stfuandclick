@@ -14,7 +14,7 @@ export const OutTeam = () => {
 		<div className="col-6 d-flex">
 			<Link
 				className="btn btn-primary w-100 d-flex align-items-center justify-content-center"
-				to={teamName}
+				to={teamName.trim()}
 			>
 				CLICK!
 			</Link>
