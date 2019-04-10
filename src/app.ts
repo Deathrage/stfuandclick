@@ -28,11 +28,11 @@ const startExpress = () => {
 // I decided to use Postgres as it allows to maintain data while switching on/off
 createConnection({
 	type: 'postgres',
-	host: 'ec2-54-195-252-243.eu-west-1.compute.amazonaws.com',
-	port: 5432,
-	username: 'cttnxpzgrvhhlo',
-	password: '40e5ad7464fdd7d3b7e399159b0d40134c4c87854e33a4ac9a4e28376059df6c',
-	database: 'd8i3neipdlbp2s',
+	host: process.env.DB_HOST,
+	port: Number(process.env.DB_PORT),
+	username: process.env.DB_USERNAME,
+	password: process.env.DB_PASS,
+	database: process.env.DB_NAME,
 	entities: [
 		path.resolve(__dirname, './models/*.ts'),
 	],
