@@ -9,12 +9,12 @@ export const OutTeam = () => {
 	return <div className="row">
 		<div className="col-6 font-italic">
 			<span>Enter your team name:</span>
-			<input className="form-control mt-2" placeholder="Your mom" type="text" value={teamName} onChange={(event) => setTeamName(event.target.value.replace('%', ''))}/>
+			<input className="form-control mt-2" placeholder="Your mom" type="text" value={teamName} onChange={(event) => setTeamName(event.target.value.replace('%', '').trim())}/>
 		</div>
 		<div className="col-6 d-flex">
 			<Link
 				className="btn btn-primary w-100 d-flex align-items-center justify-content-center"
-				to={teamName.trim()}
+				to={teamName}
 			>
 				CLICK!
 			</Link>
