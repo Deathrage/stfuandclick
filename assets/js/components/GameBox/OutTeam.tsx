@@ -9,7 +9,7 @@ export const OutTeam = () => {
 	return <div className="row">
 		<div className="col-6 font-italic">
 			<span>Enter your team name:</span>
-			<input className="form-control mt-2" placeholder="Your mom" type="text" value={teamName} onChange={(event) => setTeamName(event.target.value)}/>
+			<input className="form-control mt-2" placeholder="Your mom" type="text" value={teamName} onChange={(event) => setTeamName(event.target.value.replace('%', ''))}/>
 		</div>
 		<div className="col-6 d-flex">
 			<Link
