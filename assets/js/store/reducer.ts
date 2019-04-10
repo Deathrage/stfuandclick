@@ -1,39 +1,35 @@
 import { State, initState } from './store';
 import { SetTeamAction, Actions, SetLeaderboardAction, ClickAction } from './actions';
+import { setNewTeam } from '../helpers/setNewTeam';
+import { reorderLeaderBoard } from '../helpers/reorderLeaderBoard';
 
 export const reducer = (state: State = initState, action: Partial<SetTeamAction&SetLeaderboardAction&ClickAction>) => {
-	if (action.type === Actions.SET_TEAM) {
+	switch (action.type) {
+	case Actions.SET_TEAM:
+		// Push new team to end
+		state = setNewTeam(state, action.teamName);
+		break;
+	case Actions.LEADERBOARD:
 		state = {
 			...state,
-			teamName: action.teamName,
+			leaderBoard: action.leaderBoard,
 		};
-	} else if (action.type === Actions.LEADERBOARD) {
-		state = {
-			...state,
-			laderBoard: action.laderBoard,
-		};
-	} else if (action.type === Actions.CLICK) {
+		break;
+	case Actions.CLICK:
 		// find my team inside leaderboard
-		let myTeamIndex = state.laderBoard.findIndex(item => item.team === state.teamName);
-		let myTeam = state.laderBoard[myTeamIndex];
-		// put reference to the object to root to make it more accesible
+		let myTeamIndex = state.leaderBoard.findIndex(item => item.team === state.teamName);
+		let myTeam = state.leaderBoard[myTeamIndex];
 		myTeam.clicks = action.teamClicks;
+		// CFind new order
+		let orderedItems = reorderLeaderBoard(state.leaderBoard);
+		// put reference to the object to root to make it more accesible
 		state = {
 			...state,
+			leaderBoard: orderedItems,
 			myClicks: action.myClicks,
 			myTeam: myTeam,
 		};
-		// Check if should switch places
-		// TODO: oredering
-		if (myTeamIndex !== 0 && myTeam.clicks > state.laderBoard[myTeamIndex - 1].clicks) {
-			let oldTeam = state.laderBoard[myTeamIndex - 1];
-			// switch their order in property
-			myTeam.order--;
-			oldTeam.order++;
-			// swtich their rendering order
-			state.laderBoard[myTeamIndex - 1] = myTeam;
-			state.laderBoard[myTeamIndex] = oldTeam;
-		}
+		break;
 	}
 	return state;
 };

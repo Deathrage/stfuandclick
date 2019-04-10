@@ -12,7 +12,7 @@ export interface SetTeamAction extends Action<Actions> {
 }
 
 export interface SetLeaderboardAction extends Action<Actions> {
-	laderBoard: LeaderBoard
+	leaderBoard: LeaderBoard
 }
 
 export interface ClickAction extends Action<Actions> {
@@ -24,9 +24,9 @@ export const actionSetTeam = (teamName: string): SetTeamAction => ({
 	type: Actions.SET_TEAM,
 	teamName: teamName,
 });
-export const actionSetLeaderBoard = (laderBoard: LeaderBoard): SetLeaderboardAction => ({
+export const actionSetLeaderBoard = (leaderBoard: LeaderBoard): SetLeaderboardAction => ({
 	type: Actions.LEADERBOARD,
-	laderBoard: laderBoard,
+	leaderBoard: leaderBoard,
 });
 
 export const actionClick = (myClicks: number, teamClicks: number): ClickAction => ({

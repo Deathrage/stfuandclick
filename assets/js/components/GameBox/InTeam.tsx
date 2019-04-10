@@ -1,5 +1,5 @@
-import { sendClick } from '../helpers/sendClick';
-import { LeaderBoard } from './LeaderBoard';
+import { sendClick } from '../../helpers/sendClick';
+import { LeaderBoard } from '../LeaderBoard/LeaderBoard';
 import { RouteComponentProps } from 'react-router';
 import React = require('react');
 

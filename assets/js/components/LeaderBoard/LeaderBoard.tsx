@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { State } from '../store/store';
-import { LeaderBoard as LBInteface } from '../../../src/interfaces/Leaderboard';
+import { State } from '../../store/store';
+import { LeaderBoard as LBInteface } from '../../../../src/interfaces/Leaderboard';
 import { MyScore } from './MyScore';
 import { LeaderboardItem } from './LeaderBoardItem';
 import React = require('react');
@@ -17,9 +17,9 @@ const Component = (props: Props) => {
 	// Adjust list if needed
 	if (props.myTeam) {
 		let myTeamIndex = props.data.findIndex(item => item.team === props.myTeam);
-		let offset = myTeamIndex - count;
+		let offset = myTeamIndex - (count / 2);
 		if (offset >= 0) {
-			start = offset + 4;
+			start = offset + 1;
 			if (start + count > props.data.length) {
 				start = props.data.length - count;
 			}
@@ -44,14 +44,13 @@ const Component = (props: Props) => {
 			<span className="leaderboard-item--team">TEAM</span>
 			<span className="leaderboard-item--click">CLICKS</span>
 		</div>
-		{props.data.slice(start, start + count).map(item => <LeaderboardItem key={item.team} item={item} />)}
+		{props.data.slice(start, start + count).filter(item => item.team != null).map(item => <LeaderboardItem key={item.team} item={item} />)}
 	</div>;
 };
 
-const mapStateToProps = (state: State, ownProps: Props) => {
-	if (!state.laderBoard) return { data: [] };
+const mapStateToProps = (state: State) => {
 	return {
-		data: [].concat(state.laderBoard),
+		data: state.leaderBoard,
 	};
 };
 

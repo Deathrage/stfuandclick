@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Switch, RouteComponentProps } from 'rea
 import * as React from 'react';
 import { OutTeam } from './OutTeam';
 import { InTeam } from './InTeam';
-import { Quote } from './Quote';
-import { TeamName } from './TeamName';
-import { store } from '../store/store';
-import { actionSetTeam } from '../store/actions';
+import { Quote } from '../GameHeader/Quote';
+import { TeamName } from '../GameHeader/TeamName';
+import { store } from '../../store/store';
+import { actionSetTeam } from '../../store/actions';
 
 export const Game = () => <Provider store={store}>
 	<Router>

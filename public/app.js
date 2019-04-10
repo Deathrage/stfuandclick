@@ -94,103 +94,103 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst layout_1 = __webpack_require__(/*! ./layouts/layout */ \"./assets/js/layouts/layout.tsx\");\r\nconst Game_1 = __webpack_require__(/*! ./components/Game */ \"./assets/js/components/Game.tsx\");\r\nconst getLeaderBoard_1 = __webpack_require__(/*! ./helpers/getLeaderBoard */ \"./assets/js/helpers/getLeaderBoard.ts\");\r\nconst store_1 = __webpack_require__(/*! ./store/store */ \"./assets/js/store/store.ts\");\r\nconst actions_1 = __webpack_require__(/*! ./store/actions */ \"./assets/js/store/actions.ts\");\r\ngetLeaderBoard_1.getLeaderBoard().then(leaderBoard => {\r\n    store_1.store.dispatch(actions_1.actionSetLeaderBoard(leaderBoard));\r\n});\r\nReactDOM.render(React.createElement(layout_1.Layout, null,\r\n    React.createElement(Game_1.Game, null)), document.getElementById('app'));\r\n\n\n//# sourceURL=webpack:///./assets/js/app.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst layout_1 = __webpack_require__(/*! ./layouts/layout */ \"./assets/js/layouts/layout.tsx\");\r\nconst Game_1 = __webpack_require__(/*! ./components/GameBox/Game */ \"./assets/js/components/GameBox/Game.tsx\");\r\nconst getLeaderBoard_1 = __webpack_require__(/*! ./helpers/getLeaderBoard */ \"./assets/js/helpers/getLeaderBoard.ts\");\r\nconst store_1 = __webpack_require__(/*! ./store/store */ \"./assets/js/store/store.ts\");\r\nconst actions_1 = __webpack_require__(/*! ./store/actions */ \"./assets/js/store/actions.ts\");\r\ngetLeaderBoard_1.getLeaderBoard().then(leaderBoard => {\r\n    store_1.store.dispatch(actions_1.actionSetLeaderBoard(leaderBoard));\r\n});\r\nReactDOM.render(React.createElement(layout_1.Layout, null,\r\n    React.createElement(Game_1.Game, null)), document.getElementById('app'));\r\n\n\n//# sourceURL=webpack:///./assets/js/app.tsx?");
 
 /***/ }),
 
-/***/ "./assets/js/components/Game.tsx":
-/*!***************************************!*\
-  !*** ./assets/js/components/Game.tsx ***!
-  \***************************************/
+/***/ "./assets/js/components/GameBox/Game.tsx":
+/*!***********************************************!*\
+  !*** ./assets/js/components/GameBox/Game.tsx ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst react_redux_1 = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst OutTeam_1 = __webpack_require__(/*! ./OutTeam */ \"./assets/js/components/OutTeam.tsx\");\r\nconst InTeam_1 = __webpack_require__(/*! ./InTeam */ \"./assets/js/components/InTeam.tsx\");\r\nconst Quote_1 = __webpack_require__(/*! ./Quote */ \"./assets/js/components/Quote.tsx\");\r\nconst TeamName_1 = __webpack_require__(/*! ./TeamName */ \"./assets/js/components/TeamName.tsx\");\r\nconst store_1 = __webpack_require__(/*! ../store/store */ \"./assets/js/store/store.ts\");\r\nconst actions_1 = __webpack_require__(/*! ../store/actions */ \"./assets/js/store/actions.ts\");\r\nexports.Game = () => React.createElement(react_redux_1.Provider, { store: store_1.store },\r\n    React.createElement(react_router_dom_1.BrowserRouter, null,\r\n        React.createElement(\"div\", { className: \"quote-block\" },\r\n            React.createElement(react_router_dom_1.Switch, null,\r\n                React.createElement(react_router_dom_1.Route, { path: \"/:teamName\", component: (props) => {\r\n                        const teamName = props.match.params['teamName'];\r\n                        store_1.store.dispatch(actions_1.actionSetTeam(teamName));\r\n                        return React.createElement(TeamName_1.TeamName, { teamName: teamName, teamUrl: window.location.host + props.location.pathname });\r\n                    } }),\r\n                React.createElement(react_router_dom_1.Route, { path: \"/\", component: () => {\r\n                        store_1.store.dispatch(actions_1.actionSetTeam(null));\r\n                        return React.createElement(Quote_1.Quote, { text: \"It's realy simple, you just need to click as fas as you can.\", author: \"anonymous\" });\r\n                    } }))),\r\n        React.createElement(\"div\", { className: \"game-box border-primary rounded\" },\r\n            React.createElement(react_router_dom_1.Switch, null,\r\n                React.createElement(react_router_dom_1.Route, { path: \"/:teamName\", component: InTeam_1.InTeam }),\r\n                React.createElement(react_router_dom_1.Route, { path: \"/\", component: OutTeam_1.OutTeam })),\r\n            React.createElement(\"div\", { className: \"text-center pb-3 pt-3 font-italic\" }, \"Want to be top? STFU and click!\"))));\r\n\n\n//# sourceURL=webpack:///./assets/js/components/Game.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst react_redux_1 = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst OutTeam_1 = __webpack_require__(/*! ./OutTeam */ \"./assets/js/components/GameBox/OutTeam.tsx\");\r\nconst InTeam_1 = __webpack_require__(/*! ./InTeam */ \"./assets/js/components/GameBox/InTeam.tsx\");\r\nconst Quote_1 = __webpack_require__(/*! ../GameHeader/Quote */ \"./assets/js/components/GameHeader/Quote.tsx\");\r\nconst TeamName_1 = __webpack_require__(/*! ../GameHeader/TeamName */ \"./assets/js/components/GameHeader/TeamName.tsx\");\r\nconst store_1 = __webpack_require__(/*! ../../store/store */ \"./assets/js/store/store.ts\");\r\nconst actions_1 = __webpack_require__(/*! ../../store/actions */ \"./assets/js/store/actions.ts\");\r\nexports.Game = () => React.createElement(react_redux_1.Provider, { store: store_1.store },\r\n    React.createElement(react_router_dom_1.BrowserRouter, null,\r\n        React.createElement(\"div\", { className: \"quote-block\" },\r\n            React.createElement(react_router_dom_1.Switch, null,\r\n                React.createElement(react_router_dom_1.Route, { path: \"/:teamName\", component: (props) => {\r\n                        const teamName = props.match.params['teamName'];\r\n                        store_1.store.dispatch(actions_1.actionSetTeam(teamName));\r\n                        return React.createElement(TeamName_1.TeamName, { teamName: teamName, teamUrl: window.location.host + props.location.pathname });\r\n                    } }),\r\n                React.createElement(react_router_dom_1.Route, { path: \"/\", component: () => {\r\n                        store_1.store.dispatch(actions_1.actionSetTeam(null));\r\n                        return React.createElement(Quote_1.Quote, { text: \"It's realy simple, you just need to click as fas as you can.\", author: \"anonymous\" });\r\n                    } }))),\r\n        React.createElement(\"div\", { className: \"game-box border-primary rounded\" },\r\n            React.createElement(react_router_dom_1.Switch, null,\r\n                React.createElement(react_router_dom_1.Route, { path: \"/:teamName\", component: InTeam_1.InTeam }),\r\n                React.createElement(react_router_dom_1.Route, { path: \"/\", component: OutTeam_1.OutTeam })),\r\n            React.createElement(\"div\", { className: \"text-center pb-3 pt-3 font-italic\" }, \"Want to be top? STFU and click!\"))));\r\n\n\n//# sourceURL=webpack:///./assets/js/components/GameBox/Game.tsx?");
 
 /***/ }),
 
-/***/ "./assets/js/components/InTeam.tsx":
-/*!*****************************************!*\
-  !*** ./assets/js/components/InTeam.tsx ***!
-  \*****************************************/
+/***/ "./assets/js/components/GameBox/InTeam.tsx":
+/*!*************************************************!*\
+  !*** ./assets/js/components/GameBox/InTeam.tsx ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst sendClick_1 = __webpack_require__(/*! ../helpers/sendClick */ \"./assets/js/helpers/sendClick.ts\");\r\nconst LeaderBoard_1 = __webpack_require__(/*! ./LeaderBoard */ \"./assets/js/components/LeaderBoard.tsx\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nexports.InTeam = (props) => React.createElement(\"div\", { className: \"row\" },\r\n    React.createElement(\"div\", { className: \"col-12\" },\r\n        React.createElement(\"button\", { className: \"btn btn-primary w-100 d-flex align-items-center justify-content-center clicker\", onClick: () => sendClick_1.sendClick() }, \"CLICK!\")),\r\n    React.createElement(\"div\", { className: \"col-12\" },\r\n        React.createElement(LeaderBoard_1.LeaderBoard, { myTeam: props.match.params['teamName'] })));\r\n\n\n//# sourceURL=webpack:///./assets/js/components/InTeam.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst sendClick_1 = __webpack_require__(/*! ../../helpers/sendClick */ \"./assets/js/helpers/sendClick.ts\");\r\nconst LeaderBoard_1 = __webpack_require__(/*! ../LeaderBoard/LeaderBoard */ \"./assets/js/components/LeaderBoard/LeaderBoard.tsx\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nexports.InTeam = (props) => React.createElement(\"div\", { className: \"row\" },\r\n    React.createElement(\"div\", { className: \"col-12\" },\r\n        React.createElement(\"button\", { className: \"btn btn-primary w-100 d-flex align-items-center justify-content-center clicker\", onClick: () => sendClick_1.sendClick() }, \"CLICK!\")),\r\n    React.createElement(\"div\", { className: \"col-12\" },\r\n        React.createElement(LeaderBoard_1.LeaderBoard, { myTeam: props.match.params['teamName'] })));\r\n\n\n//# sourceURL=webpack:///./assets/js/components/GameBox/InTeam.tsx?");
 
 /***/ }),
 
-/***/ "./assets/js/components/LeaderBoard.tsx":
-/*!**********************************************!*\
-  !*** ./assets/js/components/LeaderBoard.tsx ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst react_redux_1 = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\r\nconst MyScore_1 = __webpack_require__(/*! ./MyScore */ \"./assets/js/components/MyScore.tsx\");\r\nconst LeaderBoardItem_1 = __webpack_require__(/*! ./LeaderBoardItem */ \"./assets/js/components/LeaderBoardItem.tsx\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst Component = (props) => {\r\n    let start = 0;\r\n    let count = 7;\r\n    if (props.myTeam) {\r\n        let myTeamIndex = props.data.findIndex(item => item.team === props.myTeam);\r\n        let offset = myTeamIndex - count;\r\n        if (offset >= 0) {\r\n            start = offset + 4;\r\n            if (start + count > props.data.length) {\r\n                start = props.data.length - count;\r\n            }\r\n        }\r\n    }\r\n    return React.createElement(\"div\", { className: \"leaderboard\" },\r\n        props.myTeam\r\n            ? React.createElement(MyScore_1.MyScore, null)\r\n            : React.createElement(\"div\", { className: \"ribbon-wrap mb-5\" },\r\n                React.createElement(\"h3\", { className: \"ribbon\" },\r\n                    \"TOP 10 Clickers\",\r\n                    React.createElement(\"i\", null),\r\n                    React.createElement(\"i\", null),\r\n                    React.createElement(\"i\", null),\r\n                    React.createElement(\"i\", null))),\r\n        React.createElement(\"div\", { className: \"leaderboard-item leaderboard-item--header\" },\r\n            React.createElement(\"span\", { className: \"leaderboard-item--order\" }),\r\n            React.createElement(\"span\", { className: \"leaderboard-item--team\" }, \"TEAM\"),\r\n            React.createElement(\"span\", { className: \"leaderboard-item--click\" }, \"CLICKS\")),\r\n        props.data.slice(start, start + count).map(item => React.createElement(LeaderBoardItem_1.LeaderboardItem, { key: item.team, item: item })));\r\n};\r\nconst mapStateToProps = (state, ownProps) => {\r\n    if (!state.laderBoard)\r\n        return { data: [] };\r\n    return {\r\n        data: [].concat(state.laderBoard),\r\n    };\r\n};\r\nexports.LeaderBoard = react_redux_1.connect(mapStateToProps)(Component);\r\n\n\n//# sourceURL=webpack:///./assets/js/components/LeaderBoard.tsx?");
-
-/***/ }),
-
-/***/ "./assets/js/components/LeaderBoardItem.tsx":
+/***/ "./assets/js/components/GameBox/OutTeam.tsx":
 /*!**************************************************!*\
-  !*** ./assets/js/components/LeaderBoardItem.tsx ***!
+  !*** ./assets/js/components/GameBox/OutTeam.tsx ***!
   \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst react_redux_1 = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst Component = (props) => {\r\n    return React.createElement(\"div\", { className: 'leaderboard-item' + (props.item.team === props.myTeamName ? ' leaderboard-item--large' : '') },\r\n        React.createElement(\"span\", { className: \"leaderboard-item--order\" }, props.item.order),\r\n        React.createElement(\"span\", { className: \"leaderboard-item--team\" }, props.item.team),\r\n        React.createElement(\"span\", { className: \"leaderboard-item--click\" }, props.item.clicks || 0));\r\n};\r\nconst mapStateToProps = (state, ownProps) => {\r\n    return Object.assign({}, ownProps, { myTeamName: state.teamName, myTeamClicks: state.myTeam.clicks });\r\n};\r\nexports.LeaderboardItem = react_redux_1.connect(mapStateToProps)(Component);\r\n\n\n//# sourceURL=webpack:///./assets/js/components/LeaderBoardItem.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst LeaderBoard_1 = __webpack_require__(/*! ../LeaderBoard/LeaderBoard */ \"./assets/js/components/LeaderBoard/LeaderBoard.tsx\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nexports.OutTeam = () => {\r\n    let [teamName, setTeamName] = React.useState('');\r\n    return React.createElement(\"div\", { className: \"row\" },\r\n        React.createElement(\"div\", { className: \"col-6 font-italic\" },\r\n            React.createElement(\"span\", null, \"Enter your team name:\"),\r\n            React.createElement(\"input\", { className: \"form-control mt-2\", placeholder: \"Your mom\", type: \"text\", value: teamName, onChange: (event) => setTeamName(event.target.value) })),\r\n        React.createElement(\"div\", { className: \"col-6 d-flex\" },\r\n            React.createElement(react_router_dom_1.Link, { className: \"btn btn-primary w-100 d-flex align-items-center justify-content-center\", to: teamName }, \"CLICK!\")),\r\n        React.createElement(\"div\", { className: \"col-12\" },\r\n            React.createElement(LeaderBoard_1.LeaderBoard, null)));\r\n};\r\n\n\n//# sourceURL=webpack:///./assets/js/components/GameBox/OutTeam.tsx?");
 
 /***/ }),
 
-/***/ "./assets/js/components/MyScore.tsx":
-/*!******************************************!*\
-  !*** ./assets/js/components/MyScore.tsx ***!
-  \******************************************/
+/***/ "./assets/js/components/GameHeader/Quote.tsx":
+/*!***************************************************!*\
+  !*** ./assets/js/components/GameHeader/Quote.tsx ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst react_redux_1 = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\r\nconst getMyScore_1 = __webpack_require__(/*! ../helpers/getMyScore */ \"./assets/js/helpers/getMyScore.ts\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst Component = (props) => {\r\n    if (!props.myClicks && !props.teamClicks) {\r\n        getMyScore_1.GetMyScore();\r\n    }\r\n    return React.createElement(\"div\", { className: \"score row pt-4 pb-4\" },\r\n        React.createElement(\"div\", { className: \"col-6 score-collumn\" },\r\n            \"Your clicks:\",\r\n            React.createElement(\"span\", { className: \"score-collumn--score\" }, props.myClicks || 0)),\r\n        React.createElement(\"div\", { className: \"col-6 score-collumn\" },\r\n            \"Team clicks:\",\r\n            React.createElement(\"span\", { className: \"score-collumn--score\" }, props.teamClicks || 0)));\r\n};\r\nconst mapStateToProps = (state, ownProps) => {\r\n    return {\r\n        myClicks: state.myClicks,\r\n        teamClicks: state.myTeam.clicks,\r\n    };\r\n};\r\nexports.MyScore = react_redux_1.connect(mapStateToProps)(Component);\r\n\n\n//# sourceURL=webpack:///./assets/js/components/MyScore.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nexports.Quote = (props) => React.createElement(\"div\", { className: \"font-italic col-12 d-flex justify-content-center\" },\r\n    React.createElement(\"div\", null,\r\n        React.createElement(\"span\", { className: \"d-block text-center\" },\r\n            \"\\\"\",\r\n            props.text,\r\n            \"\\\"\"),\r\n        React.createElement(\"span\", { className: \"quote-block-author\" },\r\n            \"- \",\r\n            props.author)));\r\n\n\n//# sourceURL=webpack:///./assets/js/components/GameHeader/Quote.tsx?");
 
 /***/ }),
 
-/***/ "./assets/js/components/OutTeam.tsx":
-/*!******************************************!*\
-  !*** ./assets/js/components/OutTeam.tsx ***!
-  \******************************************/
+/***/ "./assets/js/components/GameHeader/TeamName.tsx":
+/*!******************************************************!*\
+  !*** ./assets/js/components/GameHeader/TeamName.tsx ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst LeaderBoard_1 = __webpack_require__(/*! ./LeaderBoard */ \"./assets/js/components/LeaderBoard.tsx\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nclass OutTeam extends React.Component {\r\n    constructor() {\r\n        super(...arguments);\r\n        this.state = {\r\n            teamName: '',\r\n        };\r\n    }\r\n    render() {\r\n        return React.createElement(\"div\", { className: \"row\" },\r\n            React.createElement(\"div\", { className: \"col-6 font-italic\" },\r\n                React.createElement(\"span\", null, \"Enter your team name:\"),\r\n                React.createElement(\"input\", { className: \"form-control mt-2\", placeholder: \"Your mom\", type: \"text\", value: this.state.teamName, onChange: (event) => this.setState({ teamName: event.target.value }) })),\r\n            React.createElement(\"div\", { className: \"col-6 d-flex\" },\r\n                React.createElement(react_router_dom_1.Link, { className: \"btn btn-primary w-100 d-flex align-items-center justify-content-center\", to: this.state.teamName }, \"CLICK!\")),\r\n            React.createElement(\"div\", { className: \"col-12\" },\r\n                React.createElement(LeaderBoard_1.LeaderBoard, null)));\r\n    }\r\n}\r\nexports.OutTeam = OutTeam;\r\n;\r\n\n\n//# sourceURL=webpack:///./assets/js/components/OutTeam.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nexports.TeamName = (props) => React.createElement(\"div\", { className: \"teamname\" },\r\n    React.createElement(\"h2\", { className: \"text-center pb-3\" },\r\n        \"Clicking for team \",\r\n        React.createElement(\"strong\", null, props.teamName)),\r\n    React.createElement(\"div\", { className: \"teamname-share text-center font-italic\" },\r\n        \"Too lazy to click? Let your pals click for you: \",\r\n        React.createElement(\"input\", { className: \"form-control d-inline-block font-italic\", type: \"text\", value: props.teamUrl, readOnly: true })));\r\n\n\n//# sourceURL=webpack:///./assets/js/components/GameHeader/TeamName.tsx?");
 
 /***/ }),
 
-/***/ "./assets/js/components/Quote.tsx":
-/*!****************************************!*\
-  !*** ./assets/js/components/Quote.tsx ***!
-  \****************************************/
+/***/ "./assets/js/components/LeaderBoard/LeaderBoard.tsx":
+/*!**********************************************************!*\
+  !*** ./assets/js/components/LeaderBoard/LeaderBoard.tsx ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nexports.Quote = (props) => React.createElement(\"div\", { className: \"font-italic col-12 d-flex justify-content-center\" },\r\n    React.createElement(\"div\", null,\r\n        React.createElement(\"span\", { className: \"d-block text-center\" },\r\n            \"\\\"\",\r\n            props.text,\r\n            \"\\\"\"),\r\n        React.createElement(\"span\", { className: \"quote-block-author\" },\r\n            \"- \",\r\n            props.author)));\r\n\n\n//# sourceURL=webpack:///./assets/js/components/Quote.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst react_redux_1 = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\r\nconst MyScore_1 = __webpack_require__(/*! ./MyScore */ \"./assets/js/components/LeaderBoard/MyScore.tsx\");\r\nconst LeaderBoardItem_1 = __webpack_require__(/*! ./LeaderBoardItem */ \"./assets/js/components/LeaderBoard/LeaderBoardItem.tsx\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst Component = (props) => {\r\n    let start = 0;\r\n    let count = 7;\r\n    if (props.myTeam) {\r\n        let myTeamIndex = props.data.findIndex(item => item.team === props.myTeam);\r\n        let offset = myTeamIndex - (count / 2);\r\n        if (offset >= 0) {\r\n            start = offset + 1;\r\n            if (start + count > props.data.length) {\r\n                start = props.data.length - count;\r\n            }\r\n        }\r\n    }\r\n    return React.createElement(\"div\", { className: \"leaderboard\" },\r\n        props.myTeam\r\n            ? React.createElement(MyScore_1.MyScore, null)\r\n            : React.createElement(\"div\", { className: \"ribbon-wrap mb-5\" },\r\n                React.createElement(\"h3\", { className: \"ribbon\" },\r\n                    \"TOP 10 Clickers\",\r\n                    React.createElement(\"i\", null),\r\n                    React.createElement(\"i\", null),\r\n                    React.createElement(\"i\", null),\r\n                    React.createElement(\"i\", null))),\r\n        React.createElement(\"div\", { className: \"leaderboard-item leaderboard-item--header\" },\r\n            React.createElement(\"span\", { className: \"leaderboard-item--order\" }),\r\n            React.createElement(\"span\", { className: \"leaderboard-item--team\" }, \"TEAM\"),\r\n            React.createElement(\"span\", { className: \"leaderboard-item--click\" }, \"CLICKS\")),\r\n        props.data.slice(start, start + count).filter(item => item.team != null).map(item => React.createElement(LeaderBoardItem_1.LeaderboardItem, { key: item.team, item: item })));\r\n};\r\nconst mapStateToProps = (state) => {\r\n    return {\r\n        data: state.leaderBoard,\r\n    };\r\n};\r\nexports.LeaderBoard = react_redux_1.connect(mapStateToProps)(Component);\r\n\n\n//# sourceURL=webpack:///./assets/js/components/LeaderBoard/LeaderBoard.tsx?");
 
 /***/ }),
 
-/***/ "./assets/js/components/TeamName.tsx":
-/*!*******************************************!*\
-  !*** ./assets/js/components/TeamName.tsx ***!
-  \*******************************************/
+/***/ "./assets/js/components/LeaderBoard/LeaderBoardItem.tsx":
+/*!**************************************************************!*\
+  !*** ./assets/js/components/LeaderBoard/LeaderBoardItem.tsx ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nexports.TeamName = (props) => React.createElement(\"div\", { className: \"teamname\" },\r\n    React.createElement(\"h2\", { className: \"text-center pb-3\" },\r\n        \"Clicking for team \",\r\n        React.createElement(\"strong\", null, props.teamName)),\r\n    React.createElement(\"div\", { className: \"teamname-share text-center font-italic\" },\r\n        \"Too lazy to click? Let your pals click for you: \",\r\n        React.createElement(\"input\", { className: \"form-control d-inline-block font-italic\", type: \"text\", value: props.teamUrl, readOnly: true })));\r\n\n\n//# sourceURL=webpack:///./assets/js/components/TeamName.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst react_redux_1 = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst Component = (props) => React.createElement(\"div\", { className: 'leaderboard-item' + (props.item.team === props.myTeamName ? ' leaderboard-item--large' : '') },\r\n    React.createElement(\"span\", { className: \"leaderboard-item--order\" }, props.item.order),\r\n    React.createElement(\"span\", { className: \"leaderboard-item--team\" }, props.item.team),\r\n    React.createElement(\"span\", { className: \"leaderboard-item--click\" }, props.item.clicks || 0));\r\nconst mapStateToProps = (state, ownProps) => {\r\n    return Object.assign({}, ownProps, { myTeamName: state.teamName, myTeamClicks: state.myTeam.clicks });\r\n};\r\nexports.LeaderboardItem = react_redux_1.connect(mapStateToProps)(Component);\r\n\n\n//# sourceURL=webpack:///./assets/js/components/LeaderBoard/LeaderBoardItem.tsx?");
+
+/***/ }),
+
+/***/ "./assets/js/components/LeaderBoard/MyScore.tsx":
+/*!******************************************************!*\
+  !*** ./assets/js/components/LeaderBoard/MyScore.tsx ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst react_redux_1 = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\r\nconst getMyScore_1 = __webpack_require__(/*! ../../helpers/getMyScore */ \"./assets/js/helpers/getMyScore.ts\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nclass Component extends React.Component {\r\n    componentDidMount() {\r\n        if (!this.props.myClicks && !this.props.teamClicks) {\r\n            getMyScore_1.GetMyScore();\r\n        }\r\n    }\r\n    render() {\r\n        return React.createElement(\"div\", { className: \"score row pt-4 pb-4\" },\r\n            React.createElement(\"div\", { className: \"col-6 score-collumn\" },\r\n                \"Your clicks:\",\r\n                React.createElement(\"span\", { className: \"score-collumn--score\" }, this.props.myClicks || 0)),\r\n            React.createElement(\"div\", { className: \"col-6 score-collumn\" },\r\n                \"Team clicks:\",\r\n                React.createElement(\"span\", { className: \"score-collumn--score\" }, this.props.teamClicks || 0)));\r\n    }\r\n}\r\nconst mapStateToProps = (state) => {\r\n    return {\r\n        myClicks: state.myClicks,\r\n        teamClicks: state.myTeam.clicks,\r\n    };\r\n};\r\nexports.MyScore = react_redux_1.connect(mapStateToProps)(Component);\r\n\n\n//# sourceURL=webpack:///./assets/js/components/LeaderBoard/MyScore.tsx?");
 
 /***/ }),
 
@@ -218,6 +218,18 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nco
 
 /***/ }),
 
+/***/ "./assets/js/helpers/reorderLeaderBoard.ts":
+/*!*************************************************!*\
+  !*** ./assets/js/helpers/reorderLeaderBoard.ts ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.reorderLeaderBoard = (leaderBoard) => {\r\n    return leaderBoard.sort((a, b) => {\r\n        let numA = Number(a.clicks);\r\n        let numB = Number(b.clicks);\r\n        if (numA > numB) {\r\n            return -1;\r\n        }\r\n        else if (numA < numB) {\r\n            return 1;\r\n        }\r\n        else {\r\n            return 0;\r\n        }\r\n    }).map((item, index) => {\r\n        item.order = index + 1;\r\n        return item;\r\n    });\r\n};\r\n\n\n//# sourceURL=webpack:///./assets/js/helpers/reorderLeaderBoard.ts?");
+
+/***/ }),
+
 /***/ "./assets/js/helpers/sendClick.ts":
 /*!****************************************!*\
   !*** ./assets/js/helpers/sendClick.ts ***!
@@ -227,6 +239,18 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nco
 
 "use strict";
 eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst store_1 = __webpack_require__(/*! ../store/store */ \"./assets/js/store/store.ts\");\r\nconst actions_1 = __webpack_require__(/*! ../store/actions */ \"./assets/js/store/actions.ts\");\r\nexports.sendClick = (skipClick) => {\r\n    return new Promise(resolve => {\r\n        let state = store_1.store.getState();\r\n        fetch('/klik', {\r\n            method: 'POST',\r\n            headers: {\r\n                'Accept': 'application/json',\r\n                'Content-Type': 'application/json',\r\n            },\r\n            body: JSON.stringify({\r\n                team: state.teamName,\r\n                session: state.sessionId,\r\n                skipClick,\r\n            }),\r\n        }).then(response => response.json()).then((clickResponse) => {\r\n            store_1.store.dispatch(actions_1.actionClick(clickResponse['your_clicks'], clickResponse['team_clicks']));\r\n            resolve();\r\n        });\r\n    });\r\n};\r\n\n\n//# sourceURL=webpack:///./assets/js/helpers/sendClick.ts?");
+
+/***/ }),
+
+/***/ "./assets/js/helpers/setNewTeam.ts":
+/*!*****************************************!*\
+  !*** ./assets/js/helpers/setNewTeam.ts ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.setNewTeam = (state, teamName) => {\r\n    state.leaderBoard.push({\r\n        team: teamName,\r\n        clicks: 0,\r\n        order: state.leaderBoard.length,\r\n    });\r\n    return Object.assign({}, state, { teamName: teamName });\r\n};\r\n\n\n//# sourceURL=webpack:///./assets/js/helpers/setNewTeam.ts?");
 
 /***/ }),
 
@@ -250,7 +274,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nco
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar Actions;\r\n(function (Actions) {\r\n    Actions[Actions[\"SET_TEAM\"] = 0] = \"SET_TEAM\";\r\n    Actions[Actions[\"LEADERBOARD\"] = 1] = \"LEADERBOARD\";\r\n    Actions[Actions[\"CLICK\"] = 2] = \"CLICK\";\r\n})(Actions = exports.Actions || (exports.Actions = {}));\r\n;\r\nexports.actionSetTeam = (teamName) => ({\r\n    type: Actions.SET_TEAM,\r\n    teamName: teamName,\r\n});\r\nexports.actionSetLeaderBoard = (laderBoard) => ({\r\n    type: Actions.LEADERBOARD,\r\n    laderBoard: laderBoard,\r\n});\r\nexports.actionClick = (myClicks, teamClicks) => ({\r\n    type: Actions.CLICK,\r\n    myClicks,\r\n    teamClicks,\r\n});\r\n\n\n//# sourceURL=webpack:///./assets/js/store/actions.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar Actions;\r\n(function (Actions) {\r\n    Actions[Actions[\"SET_TEAM\"] = 0] = \"SET_TEAM\";\r\n    Actions[Actions[\"LEADERBOARD\"] = 1] = \"LEADERBOARD\";\r\n    Actions[Actions[\"CLICK\"] = 2] = \"CLICK\";\r\n})(Actions = exports.Actions || (exports.Actions = {}));\r\n;\r\nexports.actionSetTeam = (teamName) => ({\r\n    type: Actions.SET_TEAM,\r\n    teamName: teamName,\r\n});\r\nexports.actionSetLeaderBoard = (leaderBoard) => ({\r\n    type: Actions.LEADERBOARD,\r\n    leaderBoard: leaderBoard,\r\n});\r\nexports.actionClick = (myClicks, teamClicks) => ({\r\n    type: Actions.CLICK,\r\n    myClicks,\r\n    teamClicks,\r\n});\r\n\n\n//# sourceURL=webpack:///./assets/js/store/actions.ts?");
 
 /***/ }),
 
@@ -262,7 +286,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nva
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst store_1 = __webpack_require__(/*! ./store */ \"./assets/js/store/store.ts\");\r\nconst actions_1 = __webpack_require__(/*! ./actions */ \"./assets/js/store/actions.ts\");\r\nexports.reducer = (state = store_1.initState, action) => {\r\n    if (action.type === actions_1.Actions.SET_TEAM) {\r\n        state = Object.assign({}, state, { teamName: action.teamName });\r\n    }\r\n    else if (action.type === actions_1.Actions.LEADERBOARD) {\r\n        state = Object.assign({}, state, { laderBoard: action.laderBoard });\r\n    }\r\n    else if (action.type === actions_1.Actions.CLICK) {\r\n        let myTeamIndex = state.laderBoard.findIndex(item => item.team === state.teamName);\r\n        let myTeam = state.laderBoard[myTeamIndex];\r\n        myTeam.clicks = action.teamClicks;\r\n        state = Object.assign({}, state, { myClicks: action.myClicks, myTeam: myTeam });\r\n        if (myTeamIndex !== 0 && myTeam.clicks > state.laderBoard[myTeamIndex - 1].clicks) {\r\n            let oldTeam = state.laderBoard[myTeamIndex - 1];\r\n            myTeam.order--;\r\n            oldTeam.order++;\r\n            state.laderBoard[myTeamIndex - 1] = myTeam;\r\n            state.laderBoard[myTeamIndex] = oldTeam;\r\n        }\r\n    }\r\n    return state;\r\n};\r\n\n\n//# sourceURL=webpack:///./assets/js/store/reducer.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst store_1 = __webpack_require__(/*! ./store */ \"./assets/js/store/store.ts\");\r\nconst actions_1 = __webpack_require__(/*! ./actions */ \"./assets/js/store/actions.ts\");\r\nconst setNewTeam_1 = __webpack_require__(/*! ../helpers/setNewTeam */ \"./assets/js/helpers/setNewTeam.ts\");\r\nconst reorderLeaderBoard_1 = __webpack_require__(/*! ../helpers/reorderLeaderBoard */ \"./assets/js/helpers/reorderLeaderBoard.ts\");\r\nexports.reducer = (state = store_1.initState, action) => {\r\n    switch (action.type) {\r\n        case actions_1.Actions.SET_TEAM:\r\n            state = setNewTeam_1.setNewTeam(state, action.teamName);\r\n            break;\r\n        case actions_1.Actions.LEADERBOARD:\r\n            state = Object.assign({}, state, { leaderBoard: action.leaderBoard });\r\n            break;\r\n        case actions_1.Actions.CLICK:\r\n            let myTeamIndex = state.leaderBoard.findIndex(item => item.team === state.teamName);\r\n            let myTeam = state.leaderBoard[myTeamIndex];\r\n            myTeam.clicks = action.teamClicks;\r\n            let orderedItems = reorderLeaderBoard_1.reorderLeaderBoard(state.leaderBoard);\r\n            state = Object.assign({}, state, { leaderBoard: orderedItems, myClicks: action.myClicks, myTeam: myTeam });\r\n            break;\r\n    }\r\n    return state;\r\n};\r\n\n\n//# sourceURL=webpack:///./assets/js/store/reducer.ts?");
 
 /***/ }),
 
@@ -274,7 +298,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nco
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst redux_1 = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\r\nconst reducer_1 = __webpack_require__(/*! ./reducer */ \"./assets/js/store/reducer.ts\");\r\nconst Cookies = __webpack_require__(/*! js-cookie */ \"./node_modules/js-cookie/src/js.cookie.js\");\r\n;\r\nexports.initState = {\r\n    laderBoard: null,\r\n    teamName: null,\r\n    sessionId: Cookies.get('clickerId'),\r\n    myTeam: {},\r\n};\r\nexports.store = redux_1.createStore(reducer_1.reducer);\r\n\n\n//# sourceURL=webpack:///./assets/js/store/store.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst redux_1 = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\r\nconst reducer_1 = __webpack_require__(/*! ./reducer */ \"./assets/js/store/reducer.ts\");\r\nconst Cookies = __webpack_require__(/*! js-cookie */ \"./node_modules/js-cookie/src/js.cookie.js\");\r\n;\r\nexports.initState = {\r\n    leaderBoard: [],\r\n    teamName: null,\r\n    sessionId: Cookies.get('clickerId'),\r\n    myTeam: {},\r\n};\r\nexports.store = redux_1.createStore(reducer_1.reducer);\r\n\n\n//# sourceURL=webpack:///./assets/js/store/store.ts?");
 
 /***/ }),
 

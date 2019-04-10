@@ -19,7 +19,17 @@ export const Controller = {
 	getLeaderboard: async (req: Request, res: Response) => {
 		// Fetch items, sort them, number them
 		let items = await Team.getLeaderBoard() as LeaderboardItem[];
-		let orderedItems = items.sort((a, b) => Number(a.clicks) > Number(b.clicks) ? -1 : 1);
+		let orderedItems = items.sort((a, b) => {
+			let numA = Number(a.clicks);
+			let numB = Number(b.clicks);
+			if (numA > numB) {
+				return -1;
+			} else if (numA < numB) {
+				return 1;
+			} else {
+				return 0;
+			}
+		});
 		orderedItems.forEach((item, index) => {
 			item.order = index + 1;
 		});

@@ -5,7 +5,7 @@ import { LeaderboardItem } from '../../../src/interfaces/LeaderboardItem';
 import Cookies = require('js-cookie');
 
 export interface State {
-	laderBoard: LeaderBoard;
+	leaderBoard: LeaderBoard;
 	teamName: string;
 	myTeam?: LeaderboardItem;
 	myClicks?: number;
@@ -13,7 +13,7 @@ export interface State {
 };
 
 export const initState: State = {
-	laderBoard: null,
+	leaderBoard: [],
 	teamName: null,
 	sessionId: Cookies.get('clickerId'),
 	myTeam: {} as any,
