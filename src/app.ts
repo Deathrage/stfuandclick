@@ -25,7 +25,8 @@ const startExpress = () => {
 	app.listen(port, () => console.log(`Listening at port ${port}`));
 };
 
-// I decided to use Postgres as it allows to maintain data while switching on/off
+// I decided to use DB as it allows to maintain data while switching on/off
+// When DB is conencted start express
 createConnection({
 	type: 'postgres',
 	host: process.env.DB_HOST,

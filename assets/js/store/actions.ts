@@ -20,10 +20,13 @@ export interface ClickAction extends Action<Actions> {
 	myClicks: number,
 }
 
+// Templates for actions
+
 export const actionSetTeam = (teamName: string): SetTeamAction => ({
 	type: Actions.SET_TEAM,
 	teamName: teamName,
 });
+
 export const actionSetLeaderBoard = (leaderBoard: LeaderBoard): SetLeaderboardAction => ({
 	type: Actions.LEADERBOARD,
 	leaderBoard: leaderBoard,
